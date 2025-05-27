@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="author" content="Daniel Ziaoure" />
+    <meta name="description"
+        content="Master the Art of Prompt Engineering, Stable Diffusion, Image Generation, Generative AI" />
+    <title>Master the Art of Prompt Engineering</title>
+    <link rel="stylesheet" type="text/css" href="../../styles/graphene.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../styles/typography.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../styles/enhanced.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="styles/main.css" media="all" />
+</head>
+
+<body id="body" class="body theme-dark">
+
+    <main id="main" class="main" role="main">
+
+        <!-- Section: Hero -->
+        <section class="section-content section-hero">
+            <header>
+                <h1 class="typography-hero-headline-super">Master the Art of Prompt Engineering</h1>
+                <h3 class="typography-eyebrow-elevated">Advanced Techniques for Crafting the Perfect AI Image</h3>
+                <p class="publish-date">Published May 27, 2025</p>
+                <p class="tag-wrapper">
+                    <span class="violator inline">AI</span>
+                    <span class="violator inline">Artificial Intelligence</span>
+                    <span class="violator inline">Generative AI</span>
+                    <span class="violator inline">Stable Diffusion</span>
+                </p>
+            </header>
+
+            <figure class="intro-hero">
+                <img src="images/mastering-prompt-engineering-hero.jpg" alt="Master the Art of Prompt Engineering" />
+            </figure>
+        </section>
+
+        <!-- Section: Intro -->
+        <section class="section-content section-intro">
+            <p>
+                In my previous article titled “Demystifying Stable Diffusion”, I mentioned that prompt engineering was a
+                major challenge of Stable Diffusion because generating precise images requires carefully crafting text
+                prompts. In this article, I address this challenge by providing techniques for writing better prompts,
+                thus creating outstanding images. First, I&apos;ll describe the elements of great prompts and the key
+                techniques for writing them. Second, I&apos;ll describe different types of prompts that can be used in
+                different image generation scenarios. Finally, I&apos;ll provide a general prompt writing recipe that is
+                guaranteed to consistently generate outstanding AI images.
+            </p>
+            <p>
+                So what is prompt engineering, and why does it matter in the context of AI image generation?
+            </p>
+        </section>
+
+        <!-- Section: All about prompt engineering -->
+        <section class="section-content section-prompt-engineering">
+            <h2 class="typography-headline-super">
+                All About Prompt Engineering
+            </h2>
+            <p>
+                Prompt engineering is the art and science of crafting effective text prompts to guide an AI
+                model&mdash;such
+                as Stable Diffusion&mdash;to generate a desired image. It involves choosing the right words, structure,
+                and
+                level of detail to clearly communicate a creative intent to the model.
+            </p>
+            <p>
+                Prompt engineering is extremely
+                important because better prompts result in better images. In fact, even small changes in wording can
+                lead to very different results. So it is crucial to master the art of prompt engineering in order to
+                create outstanding AI art. And the first step to doing so is to learn the key elements of a good prompt.
+            </p>
+        </section>
+
+        <!-- Section: The elements of a good prompt -->
+        <section class="section-content section-prompt-elements">
+            <h2 class="typography-headline-super">
+                The Elements of a Good Prompt
+            </h2>
+            <p>
+                What makes a good prompt? The first element of a good prompt is clarity. Be specific, not vague. For
+                instance, instead of writing <em class="prompt">“a woman”</em>, write <em class="prompt">“a young Asian
+                    woman with long hair”</em>. The images below,
+                generated using both prompts, clearly illustrate this point.
+            </p>
+            <figure class="image-output">
+                <img src="images/prompt-a-woman.jpg" alt="A woman" />
+                <figcaption>A woman</figcaption>
+            </figure>
+            <figure class="image-output">
+                <img src="images/prompt-a-young-asian-woman.png" alt="A young Asian woman with long hair" />
+                <figcaption>A young Asian woman with long hair</figcaption>
+            </figure>
+            <p>
+                The differences in the images are quite clear. With the first prompt, we get images of women of
+                different races, ages, and hair styles. With the second prompt, all the women are Asian, young, and with
+                long hair.
+            </p>
+            <p>
+                The second element of a good prompt is the use of descriptive adjectives for colors, moods, lighting,
+                and art styles to enhance the prompt. For colors, clearly state the color (<i>“red“</i>, <i>“white”</i>.
+                etc). For
+                mood, use words such as <i>“moody atmosphere”</i>, or <i>“foggy morning”</i>. For lighting, use words
+                such as
+                <i>“cinematic lighting”</i>, <i>“studio lighting”</i>, or <i>“in morning light”</i>. And for art styles,
+                use words such as
+                <i>“digital painting”</i>, or <i>“in the style of [artist]”</i>.
+            </p>
+            <p>
+                Putting all these elements together, we can write an effective prompt such as the following: <em
+                    class="prompt">“A young
+                    woman with long hair walking on the beach, wearing a red dress, in morning light,
+                    photorealistic”</em>. This
+                prompt would generate the following image.
+            </p>
+            <figure class="image-output">
+                <img src="images/young-woman-red-dress-walking-on-beach.png" alt="A woman walking on the beach" />
+                <figcaption>A young woman with long hair walking on the beach, wearing a red dress, in morning light,
+                    photorealistic</figcaption>
+            </figure>
+            <p>
+                The elements that I have outlined here are still generic. To be more specific, they need to be put in
+                the context of a given type of prompt. In fact, there are different types of prompts, each with its own
+                set of minimal elements and attributes. The most widely used types of prompts are keyword-based prompts,
+                description-based prompts, style-based prompts, and parameterized prompts. The following sections
+                describe each type in more detail.
+            </p>
+        </section>
+
+        <!-- Section: Keyword-based prompts -->
+        <section class="section-content section-keyword-prompts">
+            <h2 class="typography-headline-super">
+                Keyword-Based Prompts: Good for Anime
+            </h2>
+            <p>
+                Keyword-based prompts are short, comma-separated tags similar to DeepBooru or DanBooru tags, which are
+                Japanese tagging systems used for generating anime images. Keyword-based prompts work well with
+                anime-style models and models trained on tag-based datasets.
+            </p>
+            <p>
+                The following is an example of a keyword-based prompt: <em class="prompt">“1girl, long hair, school
+                    uniform, looking at viewer, cherry blossom, detailed eyes”</em>. Such a prompt would generate an
+                image similar to the one below.
+            </p>
+            <figure class="image-output">
+                <img src="images/1girl-long-hair-school-uniform.png" alt="1girl, long hair, school uniform" />
+                <figcaption>
+                    1girl, long hair, school uniform, looking at viewer, cherry blossom, detailed eye
+                </figcaption>
+            </figure>
+            <p>
+                Keyword-based prompts are highly efficient and they work well with tag-trained models. However, they are
+                less expressive; so they are not great for complex compositions or for photorealism.
+            </p>
+        </section>
+
+        <!-- Section: Description-based prompts -->
+        <section class="section-content section-description-prompts">
+            <h2 class="typography-headline-super">
+                Description-Based Prompts: A Natural Language Style
+            </h2>
+            <p>
+                Description-based prompts use sentences and paragraphs that describe a scene. They are often written
+                like a story or caption. They are ideal for models that were trained on natural language, such as
+                CLIP-based models.
+            </p>
+            <p>
+                An example of a description-based prompt would be as follows: <em class="prompt">“A young woman with
+                    long black hair walks
+                    through a cherry blossom park, wearing a Japanese school uniform, as petals fall around her”</em>.
+                This would
+                generate an image similar to the one below.
+            </p>
+            <figure class="image-output">
+                <img src="images/young-girl-in-uniform-walking-petals.png"
+                    alt="A young woman with long black hair walks through a cherry blossom park" />
+                <figcaption>
+                    A young woman with long black hair walks through a cherry blossom park, wearing a Japanese school
+                    uniform, as petals fall around her
+                </figcaption>
+            </figure>
+            <p>
+                Description-based prompts are more expressive and intuitive for non-technical users and they often
+                produce better results for photorealistic and cinematic scenes, However, they can be too verbose or
+                vague if not structured well.
+            </p>
+        </section>
+
+        <!-- Section: Style-based prompts -->
+        <section class="section-content section-style-prompts">
+            <h2 class="typography-headline-super">
+                Style-Based Prompts: Focus on a Specific Style
+            </h2>
+            <p>
+                Style-based prompts are prompts that emphasize a specific visual style, medium, or aesthetics. They are
+                used to mimic artists, genres, or media types. They contain words such as <i>“oil painting”</i> or
+                <i>“in the
+                    style of [artist]”</i>.
+            </p>
+            <p>
+                An example of a style-based prompt would be: <em class="prompt">“An oil painting portrait of a beautiful
+                    adult woman with
+                    long black hair, in the style of Leonardo da Vinci”</em>. This would generate an image similar to
+                the one
+                below.
+            </p>
+            <figure class="image-output">
+                <img src="images/portrait-woman-leonardo-da-vinci.jpg"
+                    alt="An oil painting portrait of a woman by Leonardo da Vinci" />
+                <figcaption>
+                    An oil painting portrait of a beautiful adult woman with long black hair, in the style of Leonardo
+                    da Vinci
+                </figcaption>
+            </figure>
+            <p>
+                We would get a different image if we were to change the style to that of Rembrandt, as follows: <em
+                    class="prompt">“An oil
+                    painting portrait of a beautiful adult woman with long black hair, in the style of Rembrandt”</em>
+            </p>
+            <figure class="image-output">
+                <img src="images/portrait-woman-rembrandt.jpg" alt="An oil painting portrait of a woman by Rembrandt" />
+                <figcaption>
+                    An oil painting portrait of a beautiful adult woman with long black hair, in the style of Rembrandt
+                </figcaption>
+            </figure>
+            <p>
+                Style-based prompts add artistic flair and consistency to the image output. However, they may also
+                override some visual elements in the prompt because the artistic style takes precedence over any other
+                keyword.
+            </p>
+        </section>
+
+        <!-- Section: Parameterized prompts -->
+        <section class="section-content section-parameterized-prompts">
+            <h2 class="typography-headline-super">
+                Parameterized Prompts: Emphasis on Important Words
+            </h2>
+            <p>
+                Parameterized prompts are prompts that emphasize certain words or sections by weighing them using the
+                following pattern: <strong>“(word:weight)”</strong>. The parentheses highlight the word; and the weight
+                specifies its
+                relative importance. The weight uses a decimal format that starts at an implicit value of <i>“1.0”</i>;
+                with
+                <i>“1.1”</i> meaning <i>“10% more important than other words”</i>, <i>“1.2”</i> meaning <i>“20% more
+                    important than other
+                    words”</i>, and so on. Examples of such weighed words are <i>“(long hair:1.1)”</i> or <i>“(school
+                    uniform:1.2)”</i>. In
+                these examples, both <i>“long hair”</i> and <i>“school uniform”</i> will be more important than other
+                words in the
+                prompt; however, <i>“school uniform”</i> will be given higher priority over <i>“long hair”</i> because
+                it has a
+                greater weight.
+            </p>
+            <p>
+                Parameterized prompts give more control over what the model should emphasize. They are usually used in
+                combination with other prompt types, especially keyword-based prompts. In fact, the previous
+                keyword-based prompt example could be rewritten as follows: <em class="prompt">“1girl, (long hair:1.1),
+                    (school
+                    uniform:1.2), looking at viewer, cherry blossom, detailed eyes”</em>. This would generate an image
+                similar to
+                the one below:
+            </p>
+            <figure class="image-output">
+                <img src="images/young-asian-girl-in-uniform-parameterized.png"
+                    alt="1girl, (long hair:1.1), (school uniform:1.2)" />
+                <figcaption>
+                    1girl, (long hair:1.1), (school uniform:1.2), looking at viewer, cherry blossom, detailed eyes
+                </figcaption>
+            </figure>
+            <p>
+                Parameterized prompts provide fine-tuned control over prompt strength. However, they require a deeper
+                knowledge of the behavior of the model being used, which usually requires extra work and/or research.
+            </p>
+            <p>
+                With so many prompt types and specific use cases, which one should you use? And what if you&apos;d like
+                to
+                have a prompt template that consistently generates outstanding results in most image generation
+                scenarios? Fear not, for the next section will provide you with such a recipe.
+            </p>
+        </section>
+
+        <!-- Section: Prompt Recipe -->
+        <section class="section-content section-prompt-recipe">
+            <h2 class="typography-headline-super">
+                A Recipe for Effective Image Prompts
+            </h2>
+            <p>
+                In general, I recommend the following template for writing effective prompts:
+            </p>
+            <p class="prompt-recipe">
+                A [subject] [action] [environment or location], [lighting], [art style], masterpiece, best quality,
+                highly detailed
+            </p>
+            <p>
+                Let&apos;s review each component in detail.
+            </p>
+            <p>
+                First, the subject is the main actor in the image. Use clear nouns and modifiers when describing it. For
+                example, you can write <em class="prompt">“A young asian girl”</em>, <em class="prompt">“A red sports
+                    car”</em>, <em class="prompt">“A futuristic robot with humanoid
+                    shape”</em>, etc.
+            </p>
+            <p>
+                Second, the action is what the subject is doing. Use dynamic elements or storytelling hints to describe
+                it. Some examples include <em class="prompt">“walking on the beach”</em>, <em class="prompt">“dancing in
+                    the rain”</em>, <em class="prompt">“driving on a desert street”</em>, etc.
+            </p>
+            <p>
+                Third, the environment describes the context or location of the image. Be as specific as possible when
+                describing it. For instance, use words such as <em class="prompt">“inside an old church”</em>, <em
+                    class="prompt">“on a tropical island”</em>, <em class="prompt">“in post-apocalyptic San
+                    Francisco”</em>, etc.
+            </p>
+            <p>
+                Fourth, the lighting sets the mood and provides the emotional tone of the image. Use words that evoke
+                such feelings. Examples include <em class="prompt">“soft light”</em>, <em class="prompt">“in morning
+                    light”</em>, <em class="prompt">“cinematic lighting”</em>, <em class="prompt">“foggy winter
+                    morning”</em>, etc.
+            </p>
+            <p>
+                Finally, the artistic style guides the overall visual treatment of the image. You can use common
+                keywords such as <em class="prompt">“anime”</em>, <em class="prompt">“digital painting”</em>, or <em
+                    class="prompt">“photorealistic”</em>. You can also use artistic reference words such as <em
+                    class="prompt">“in the style of [artist]”</em>. Experiment with different styles until you find the
+                most appropriate one for your image.
+            </p>
+            <p>
+                For portraits. I recommend the following template:
+            </p>
+            <p class="prompt-recipe">
+                (masterpiece, best quality), portrait of [subject], [specific features], highly detailed eyes, highly
+                detailed skin, skin pores, professional lighting, dslr, ultra quality, sharp focus, depth of field,
+                Fujifilm XT3
+            </p>
+            <p>
+                Put together, those templates result in the following outstanding AI images.
+            </p>
+            <dl class="generated-image">
+                <dt>
+                    <strong>Prompt:</strong> <em>A medieval knight kneeling before a glowing forest altar, under golden
+                        hour
+                        sunlight, in the style of a high-fantasy oil painting, masterpiece, best quality, highly
+                        detailed</em>
+                </dt>
+                <dd>
+                    <strong>Generated image:</strong>
+                    <figure class="image-output">
+                        <img src="images/medieval-knight-kneeling.png"
+                            alt="A medieval knight kneeling before a glowing forest altar" />
+                        <figcaption>
+                            A medieval knight kneeling before a glowing forest altar, under golden hour sunlight, in the
+                            style of a high-fantasy oil painting, masterpiece, best quality, highly detailed
+                        </figcaption>
+                    </figure>
+                </dd>
+            </dl>
+            <dl class="generated-image">
+                <dt>
+                    <strong>Prompt:</strong> <em>A child chasing butterflies through a sunflower field, under bright
+                        summer
+                        skies, in the style of Studio Ghibli animation, masterpiece, best quality, highly detailed</em>
+                </dt>
+                <dd>
+                    <strong>Generated image:</strong>
+                    <figure class="image-output">
+                        <img src="images/child-chasing-butterflies.png"
+                            alt="A child chasing butterflies through a sunflower field" />
+                        <figcaption>
+                            A child chasing butterflies through a sunflower field, under bright summer skies, in the
+                            style of Studio Ghibli animation, masterpiece, best quality, highly detailed
+                        </figcaption>
+                    </figure>
+                </dd>
+            </dl>
+            <dl class="generated-image">
+                <dt>
+                    <strong>Prompt:</strong> <em>A monk meditating atop a floating rock island, under a twilight sky, in
+                        the
+                        style of surreal concept art, masterpiece, best quality, highly detailed</em>
+                </dt>
+                <dd>
+                    <strong>Generated image:</strong>
+                    <figure class="image-output">
+                        <img src="images/monk-meditating.png" alt="A monk meditating atop a floating rock island" />
+                        <figcaption>
+                            A monk meditating atop a floating rock island, under a twilight sky, in the style of surreal
+                            concept art, masterpiece, best quality, highly detailed
+                        </figcaption>
+                    </figure>
+                </dd>
+            </dl>
+            <dl class="generated-image">
+                <dt>
+                    <strong>Prompt:</strong> <em>A futuristic robot gardener planting flowers on Mars, under the soft
+                        glow
+                        of a distant sun, photorealistic 3D render, masterpiece, best quality, highly detailed</em>
+                </dt>
+                <dd>
+                    <strong>Generated image:</strong>
+                    <figure class="image-output">
+                        <img src="images/robot-gardener-on-mars.png"
+                            alt="A futuristic robot gardener planting flowers on Mars" />
+                        <figcaption>
+                            A futuristic robot gardener planting flowers on Mars, under the soft glow of a distant sun,
+                            photorealistic 3D render, masterpiece, best quality, highly detailed
+                        </figcaption>
+                    </figure>
+                </dd>
+            </dl>
+            <dl class="generated-image">
+                <dt>
+                    <strong>Prompt:</strong> <em>(masterpiece, high quality), portrait of a 25-year old African-American
+                        woman, light skin, curly black hair, white dress, highly detailed eyes, highly detailed skin,
+                        skin
+                        pores, professional lighting, dslr, ultra quality, sharp focus, depth of field, Fujifilm
+                        XT3</em>
+                </dt>
+                <dd>
+                    <strong>Generated image:</strong>
+                    <figure class="image-output">
+                        <img src="images/portrait-african-american-woman.png"
+                            alt="Portrait of a 25-year old African-American woman" />
+                        <figcaption>
+                            (masterpiece, high quality), portrait of a 25-year old African-American woman, light skin,
+                            curly black hair, white dress, highly detailed eyes, highly detailed skin, skin pores,
+                            professional lighting, dslr, ultra quality, sharp focus, depth of field, Fujifilm XT3
+                        </figcaption>
+                    </figure>
+                </dd>
+            </dl>
+            <p>
+                Those are outstanding creations, aren’t they?
+            </p>
+        </section>
+
+        <!-- Section: Conclusion -->
+        <section class="section-content section-conclusion">
+            <h2 class="typography-headline-super">
+                Conclusion
+            </h2>
+            <p>
+                In conclusion, prompt engineering is more than just typing words into a box; it&apos;s a creative
+                process
+                that blends imagination, language, and visual thinking. The way you write your prompts affects the image
+                output. By understanding the different types of prompts and experimenting with structure, detail, and
+                style, you can unlock the full potential of AI models like Stable Diffusion. So follow the
+                recommendations that I&apos;ve provided in this article, experiment with different prompt types, combine
+                them, enrich them with your own style, and push them to the limits of your creativity. To master the art
+                of prompt engineering, just remember that, when it comes to AI-generated art, the prompt is your brush,
+                and the model is your canvas.
+            </p>
+        </section>
+
+    </main>
+
+    </main>
+</body>
+
+</html>
