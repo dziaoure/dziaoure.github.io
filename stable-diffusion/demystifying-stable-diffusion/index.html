@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="author" content="Daniel Ziaoure" />
+    <meta name="description"
+        content="Demystifying Stable Diffusiong, Stable Diffusion, Image Generation, Generative AI" />
+    <title>Demystifying Stable Diffusion</title>
+    <link rel="stylesheet" type="text/css" href="../../styles/graphene.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../styles/typography.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../styles/enhanced.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../../styles/main.css" media="all" />
+</head>
+
+<body id="body" class="body theme-dark">
+
+    <main id="main" class="main" role="main">
+
+        <!-- Section: Hero -->
+        <section class="section-content section-hero">
+            <header>
+                <h1 class="typography-hero-headline-super">Demystifying Stable Diffusion</h1>
+                <h3 class="typography-eyebrow-elevated">An Introductory Guide to AI Image Generation</h3>
+                <p class="publish-date">By Daniel Ziaoure - Feb 13, 2025</p>
+                <p class="tag-wrapper">
+                    <span class="violator inline">AI</span>
+                    <span class="violator inline">Artificial Intelligence</span>
+                    <span class="violator inline">Generative AI</span>
+                    <span class="violator inline">Stable Diffusion</span>
+                </p>
+            </header>
+
+            <figure class="intro-hero">
+                <img src="images/demystifying-stable-diffusion-hero.jpg" alt="Demystifying Stable Diffusion" />
+                <figcaption>&copy; Daniel Ziaoure</figcaption>
+            </figure>
+        </section>
+
+        <!-- Section: Intro -->
+        <section class="section-content section-intro">
+            <p>
+                It is safe to say that 2023 was the year of <a
+                    href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_blank"
+                    title="Artificial Intelligence">Artificial Intelligence (AI)</a> and <a
+                    href="https://en.wikipedia.org/wiki/Machine_learning" target="_blank"
+                    title="Machine Learning">Machine Learning (ML)</a>. In
+                fact, it was the year that marked an important milestone in the ongoing progress in the field of AI, a
+                development sometimes referred to as the “AI boom”. Here is a sample of some of those major
+                developments: <a href="https://chatgpt.com/" target="_blank" title="ChatGPT">ChatGPT</a> emerged as a
+                mature
+                and intelligent virtual assistant capable of holding a
+                conversation on any given topic; several Generative AI models such as <a
+                    href="https://openai.com/index/dall-e-2/" target="_blank" title="DALL-E">DALL-E</a> and <a
+                    href="https://stability.ai/" target="_blank" title="Stable Diffusion">Stable Diffusion</a>
+                became
+                popular image generation models; and even image editing apps such as Photoshop included Generative
+                AI as
+                key features in their newer versions.
+            </p>
+            <p>
+                With so many developments happening in such little time, it is easy to get lost in the AI ecosystem.
+                This article aims to ease such confusion by focusing on one AI technology: AI image generation using
+                Stable Diffusion. It will strive to be less technical. Therefore, it will provide an overview of Stable
+                Diffusion in terms that non-technical people can easily understand. First, it will introduce the key
+                concepts of AI image generation. Second, it will describe the components of Stable Diffusion and the
+                role that they play in the different stages of training and image generation. Third, it will provide
+                some tips on how to get started with Stable Diffusion. Finally, it will outline some challenges that
+                Stable Diffusion faces today or might face in the near future. Granted, it will contain graphics or
+                diagrams where necessary; however, those diagrams will be designed to appear as simplistic and
+                straightforward as possible while still conveying their intended message.
+            </p>
+            <p>
+                So what is Stable Diffusion anyway?
+            </p>
+        </section>
+
+        <!-- Section: A little bit of terminology -->
+        <section class="section-content section-terminology">
+            <h2 class="typography-headline-super">
+                A Little Bit of Terminology
+            </h2>
+            <p>
+                Stable Diffusion is a <a href="https://en.wikipedia.org/wiki/Generative_artificial_intelligence"
+                    target="_blank" title="Generative AI">Generative AI</a> technology that is capable of generating
+                high-quality images based
+                on a textual description—or prompt. Generative AI is a subset of AI that uses generative models to
+                produce text, images, videos, or other forms of data. A model in AI can be thought of as a very smart
+                set of instructions that helps a computer generate images based on text descriptions. As such, Stable
+                Diffusion models are trained on billions of images and learn to recreate them from scratch when given a
+                prompt. Stable Diffusion is a product of <a href="https://stability.ai/" target="_blank"
+                    title="Stability AI">Stability AI</a>, an AI company founded in 2019.
+            </p>
+            <p>
+                Stable Diffusion is based on diffusion techniques. According to Wikipedia, <a
+                    href="https://en.wikipedia.org/wiki/Diffusion" target="_blank" title="Diffusion">diffusion</a> is
+                the net movement
+                of anything—for instance, atoms, ions, molecules, energy—generally from a region of higher concentration
+                to a region of lower concentration. It is a concept widely used in Physics, Chemistry, Statistics, and
+                many other sciences. When applied to Stable Diffusion, the term “diffusion” refers to how the model adds
+                and removes noise in a controlled manner to generate realistic images. It refers to the entire denoising
+                process: the noise addition during the training phase and the noise removal during the generation phase.
+            </p>
+            <p>
+                Now that we&apos;re familiar with the basic terminology, let&apos;s analyze the inner workings of Stable
+                Diffusion
+                and the role of its main components in the diffusion process. To do so, it helps to break it down into
+                its two phases: the Forward Diffusion phase—or Training Phase—and the Reverse Diffusion phase—or
+                Generation Phase.
+            </p>
+        </section>
+
+        <!-- Section: Forward Diffusion -->
+        <section class="section-content section-forward-diffusion">
+            <h2 class="typography-headline-super">
+                Forward Diffusion: The Training Phase
+            </h2>
+            <p>
+                The Forward Diffusion phase is known as the training phase. During that phase, the model learns to
+                gradually add noise to clean images, creating images that are made of pure noise. This process is
+                iterative, with noise being added in controlled steps. The goal of this phase is to teach the model how
+                images degrade over time when noise is introduced so that it can later reverse engineer this degradation
+                process during the image generation process.
+            </p>
+            <p>
+                To better understand this process in practice, let&apos;s use the following example: an image of the
+                Golden
+                Gate Bridge with the caption <em class="prompt">“A scenic view of the Golden Gate Bridge during
+                    sunset”</em>. Our goal is to
+                gradually convert this image into pure noise while learning how this transformation occurs. The key
+                components involved in this process are the <a
+                    href="https://en.wikipedia.org/wiki/Contrastive_Language-Image_Pre-training" target="_blank"
+                    title="Contrastive Language-Image Pretraining">CLIP (Contrastive Language-Image Pretraining)</a>
+                model, the
+                <a href="https://en.wikipedia.org/wiki/U-Net" target="_blank" title="U-Net">U-Net</a> noise predictor,
+                and the <a href="https://en.wikipedia.org/wiki/Variational_autoencoder" target="_blank"
+                    title="Variational AutoEncoder">Variational AutoEncoder (VAE)</a>.
+            </p>
+            <p>
+                The following diagram describes the forward diffusion process and the role of the different components
+                in that process.
+            </p>
+            <figure class="image-output">
+                <img src="images/forward-diffusion.jpg" alt="Forward diffusion process" />
+                <figcaption>Forward Diffusion: The Training Phase</figcaption>
+            </figure>
+            <p>
+                In the first step, our image of the Golden Gate Bridge is passed through the VAE encoder. Instead of
+                working directly with pixel-space data, the VAE compresses the image into a lower-dimension space called
+                “latent space”. For instance, let&apos;s assume that our image has a dimension of 512 pixels by 512
+                pixels,
+                which is the standard dimension for most training images. The VAE compresses it to a size of 64 pixels
+                by 64 pixels. An obvious question might be: why does the VAE need to compress the image instead of
+                processing it in its original form? And the answer would be simple: to achieve computational efficiency.
+                That is because working in pixel space would require the VAE to process 786,432 individual pixel values
+                (512x512x3 since each pixel has three values: Red, Green, and Blue). By contrast, compressing the image
+                would require processing only 16,384 pixel values (64x64x4; 3 RGB values, 1 spatial dimension value),
+                which would require 48 times less memory. In addition, the latent representation retains only the
+                essential visual features of the bridge—such as its red-orange color, its suspension cables, and the
+                surrounding environment—while discarding unnecessary pixel-level details.
+            </p>
+            <p>
+                In the second step, the diffusion process begins in the latent space. Over multiple steps, Gaussian
+                noise is incrementally added to the latent representation, causing the image to become progressively
+                noisy until it turns into complete noise. In our specific case, our bridge will progressively appear
+                blurry; its structural details (such as its towers and cables) will become increasingly unrecognizable;
+                and it will be almost pure noise in the final steps. This process illustrates how real-world images
+                degrade when affected by external elements.
+            </p>
+            <p>
+                In the third step, the U-Net model learns to predict the noise patterns. The U-Net architecture is a
+                type of convolutional neural network commonly used in image processing tasks such as segmentation and
+                generation. It has two paths: a contracting path (encoder) and an expanding path (decoder). The function
+                of its encoder is to extract features from an input image while reducing its spatial dimension, and the
+                function of its decoder is to reconstruct the image from the compressed representation while increasing
+                spatial dimension. Its name comes from its “U” shape, formed by those two paths.
+            </p>
+            <p>
+                The U-Net model acts as a noise predictor trained to reverse the previous noise-addition process. During
+                training, it learns to predict the amount of noise added at each step by analyzing noisy image
+                representations. First, it takes the noisy image latent at each step and estimates the noise component.
+                Next, it minimizes the difference between the predicted noise and the actual noise added during
+                training. Finally, over thousands of training iterations, it refines its ability to predict noise across
+                different images, thus learning to generalize noise patterns effectively.
+            </p>
+            <p>
+                In the final step, the CLIP model is used to understand image-text relationships. CLIP stands for
+                “Contrastive Language-Image Pretraining”. As its name suggests, it associates visual features with
+                textual descriptions. For instance, it will make the following connection between our image and its
+                caption: first, it will tokenize our caption, splitting it into meaningful fragments called tokens.
+                These tokens represent semantic information that helps the model understand our image. For instance,
+                <em class="prompt">“scenic view”</em>, <em class="prompt">“golden gate bridge”</em>, and <em
+                    class="prompt">“sunset”</em> are interpreted as distinct yet related concepts.
+                Second, it will encode both the image and the text into a shared latent space. Third, it will align
+                these embeddings so that similar text and images are positioned together. Finally, it will ensure that,
+                during the Reverse Diffusion phase, the model can generate relevant images when given a similar text
+                prompt.
+            </p>
+        </section>
+
+        <!-- Section: Reverse Diffusion -->
+        <section class="section-content section-reverse-diffusion">
+            <h2 class="typography-headline-super">
+                Reverse Diffusion: The Generation Phase
+            </h2>
+            <p>
+                Now that we&apos;ve explored how the Forward Diffusion phase transforms an image of the Golden Gate
+                Bridge
+                into pure noise, let&apos;s examine how Stable Diffusion reverses this process to generate an image from
+                the
+                following text prompt: <em class="prompt">“A view of the Golden Gate Bridge.”</em> The Reverse Diffusion
+                phase reconstructs a
+                coherent image from random noise, guided by the same key components: CLIP, U-Net, and VAE.
+            </p>
+            <p>
+                The following diagram describes the reverse diffusion process and the role of the different components
+                in that process.
+            </p>
+            <figure class="image-output">
+                <img src="images/reverse-diffusion.jpg" alt="Reverse diffusion process" />
+                <figcaption>Reverse Diffusion: The Generation Phase</figcaption>
+            </figure>
+            <p>
+                In the first step, the CLIP model interprets the input text prompt. As previously stated, CLIP is
+                responsible for associating words with visual concepts and for guiding the image generation process. It
+                processes the prompt as follows: first, the text <em class="prompt">“A view of the Golden Gate
+                    Bridge”</em> is tokenized and
+                converted into a numerical representation (embedding) in a shared latent space. Second, CLIP compares
+                this text embedding to its learned associations with similar images (for instance, images that are
+                labeled with <em class="prompt">“Golden Gate Bridge”</em>) to establish a target image representation.
+                Third, this embedding is
+                fed into the U-Net model to ensure that the generated image aligns with the textual description.
+            </p>
+            <p>
+                In the second step, the Reverse Diffusion process begins with random noise in the latent space. This
+                noise has no structure or recognizable patterns. It is purely chaotic. At this point, the image
+                representation contains no visible bridge, sky, or water—just a random distribution of values. The goal
+                of the Reverse Diffusion process is to iteratively denoise this representation, gradually shaping it
+                into an image that aligns with the text prompt.
+            </p>
+            <p>
+                In the third step, the U-Net model gradually removes noise from the latent space representation in
+                multiple steps, guided by both the noise patterns learned during training and the CLIP-provided text
+                embedding. In each denoising step, it predicts the noise present in the current latent representation
+                and subtracts it. The model adjusts the image towards an expected structure, reinforcing patterns
+                associated with <em>“Golden Gate Bridge”</em> based on its training. Over multiple iterations, small
+                details
+                begin to emerge—first abstract shapes, then recognizable structures like the towers and suspension
+                cables. As the U-Net continues denoising, the latent representation becomes increasingly structured.
+                Elements of the Golden Gate Bridge, the sky, and the surrounding water start taking shape. The color
+                scheme adjusts—the red-orange structure of the bridge emerges. The surrounding elements also emerge. The
+                model refines smaller details, and the process continues until the noise is fully removed and the latent
+                representation is a clear and structured image.
+            </p>
+            <p>
+                In the fourth step, the VAE converts the image from latent space back into pixel space. First, it takes
+                the final latent image and reconstructs it into a high-resolution image that humans can view. This
+                high-resolution image looks realistic and visually appealing, with fine-grained details and sharp
+                textures. In our example, it is an AI-generated depiction of the Golden Gate Bridge, closely matching
+                our prompt.
+            </p>
+            <p>
+                This example illustrates how Stable Diffusion transforms a simple text prompt into a complex,
+                high-quality image, using a step-by-step refinement process driven by deep learning and latent space
+                operations. This process describes the “Text-to-Image” flow; but Stable Diffusion contains other model
+                types.
+            </p>
+        </section>
+
+        <!-- Section: Model Types -->
+        <section class="section-content section-model-types">
+            <h2 class="typography-headline-super">
+                Stable Diffusion Model Types
+            </h2>
+            <p>
+                Stable Diffusion is largely used for static image generation; however, it contains several models that
+                handle specific AI-driven tasks.
+            </p>
+            <p>
+                The first model is <em class="prompt">“Text-to-Image”</em>&mdash;commonly abbreviated
+                <abbr title="Text-to-Image">“txt2img”</abbr>. This is the most popular model. It generates images from
+                textual descriptions using
+                a diffusion model guided by CLIP embeddings. It is the subject of this article.
+            </p>
+            <p>
+                The second model is <em class="prompt">“Image-to-Image”</em>&mdash;commonly abbreviated
+                <abbr title="Image-to-Image">“img2img”</abbr>. It transforms an existing image while preserving its
+                structure, guided by text or by
+                an additional input. For instance, it can convert a sketch into a detailed painting.
+            </p>
+            <p>
+                The third model is <em class="prompt">“Inpainting”</em>&mdash;—also called <em>“Image Editing”</em>. It
+                fills in missing or altered parts of an image based on context and text input. For example, it can
+                remove an object from an image or change the background of a photo.
+            </p>
+            <p>
+                The fourth model is <em class="prompt">“Outpainting”</em>&mdash;—also called <em>“Image Expansion”</em>.
+                It extends an image beyond its original boundaries, generating new content that blends seamlessly with
+                the image. For example, it can expand a portrait into a full scenic background.
+            </p>
+            <p>
+                The fifth model is <em class="prompt">“Text-to-Video”</em>. It generates short video sequences from text
+                prompts by applying diffusion techniques to multiple frames. For example, a prompt such as <em
+                    class="prompt">“A cat
+                    playing with a ball”</em> becomes a short animated clip.
+            </p>
+            <p>
+                The final model is <em class="prompt">“Image-to-Video”</em>. It creates motion from still images,
+                animating elements based on known or inferred dynamics. For example, it can make waves move in a static
+                ocean painting.
+            </p>
+            <p>
+                Each of these models extends the power of Stable Diffusion beyond static images, enabling creative and
+                practical AI-driven applications. So how do you get started with Stable Diffusion?
+            </p>
+        </section>
+
+        <!-- Section: Getting Started -->
+        <section class="section-content section-getting-started">
+            <h2 class="typography-headline-super">
+                Getting Started With Stable Diffusion
+            </h2>
+            <p>
+                Getting started with Stable Diffusion is easier than ever, whether you&apos;re a beginner or an advanced
+                user. You can use Web-based platforms such as <a href="https://beta.dreamstudio.ai/" target="_blank"
+                    title="DreamStudio">DreamStudio</a>, <a href="https://www.midjourney.com/" target="_blank"
+                    title="Midjourney">Midjourney</a>, <a href="https://runwayml.com/" target="_blank"
+                    title="Runway ML">Runway ML</a>, or <a href="https://leonardo.ai/" target="_blank"
+                    title="Leonardo.AI">Leonardo.AI</a>. You
+                can also install it locally for more control and deeper customization. For local installations, you can
+                use <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui" target="_blank"
+                    title="Automatic1111">Automatic1111</a> or <a href="https://github.com/comfyanonymous/ComfyUI"
+                    target="_blank" title="ComfyUI">ComfyUI</a>.
+            </p>
+            <p>
+                White Stable Diffusion is a powerful tool for AI image generation, it comes with several challenges and
+                considerations that users should be aware of.
+            </p>
+
+        </section>
+
+        <!-- Section: Challenges and Considerations -->
+        <section class="section-content section-challenges">
+            <h2 class="typography-headline-super">
+                Challenges and Considerations
+            </h2>
+            <p>
+                The challenges of Stable Diffusion range from technical limitations to ethical concerns.
+            </p>
+            <p>
+                The first technical challenge is about computational requirements. Running Stable Diffusion locally
+                requires a powerful GPU (Graphics Processing Unit) with ample VRAM (Video Random Access Memory), ideally
+                8 GB or more. Generating high-resolution images or fine-tuning models can also be computationally
+                expensive. There are Cloud-based alternatives, but they require paid subscriptions.
+            </p>
+            <p>
+                The second technical challenge is about prompt engineering. Generating precise images often requires
+                carefully crafting text prompts. In addition, achieving specific compositions or details can be
+                unpredictable, requiring multiple iterations.
+            </p>
+            <p>
+                At the ethical level, the first concern is about bias and representation. AI models may reflect biases
+                from training data, leading to unintended or skewed outputs. For instance, a basic prompt such as <em
+                    class="prompt">“A
+                    portrait of a woman”</em> might generate a portrait of a Caucasian woman with blonde hair and blue
+                eyes when
+                using models that were trained predominantly on images with such characteristics.
+            </p>
+            <p>
+                Another ethical concern is about copyright issues. Some generated images may resemble copyrighted
+                material, thus raising concerns in commercial use.
+            </p>
+            <p>
+                Finally, there is the ethical concern of misinformation. AI-generated images can be used to create
+                misleading content, which might have some unintended consequences.
+            </p>
+            <p>
+                Despite those challenges, Stable Diffusion remains a groundbreaking tool for AI creativity.
+                Understanding its limitations and best practices ensures a better user experience, responsible use, and
+                more control over AI-generated content. As research continues, we can expect to see further improvements
+                in efficiency, ethics, and model training, which will shape the future of AI art.
+            </p>
+
+        </section>
+
+        <!-- Section: Conclusion -->
+        <section class="section-content section-conclusion">
+            <h2 class="typography-headline-super">
+                Conclusion
+            </h2>
+            <p>
+                In conclusion, Stable Diffusion is revolutionizing AI-driven image generation, making it accessible to
+                both artists and developers. By understanding how its core components—CLIP, U-Net, and VAE—work together
+                in the Forward and Reverse Diffusion processes, we gain insight into how AI transforms text prompts into
+                stunning images. Whether you’re generating new images, editing existing ones, or even creating
+                AI-powered videos, Stable Diffusion offers endless possibilities, As AI continues to evolve, mastering
+                these tools will unlock new opportunities for content creation. This is just the beginning, and the
+                technology keeps improving at a remarkable pace. The future of AI art and creativity is bright, indeed.
+            </p>
+        </section>
+
+        <!-- Section: Related articles -->
+        <section class="section-content section-related-articles">
+            <h3 class="typography-headline-reduced">
+                Related Article
+            </h3>
+            <ul class="related-articles">
+                <li>
+                    <div class="article-wrapper">
+                        <figure>
+                            <a href="https://dziaoure.github.io/stable-diffusion/master-the-art-of-prompt-engineering/">
+                                <img src="../master-the-art-of-prompt-engineering/images/mastering-prompt-engineering-hero.jpg"
+                                    alt="Master the Art of Prompt Enfineering" />
+                            </a>
+                        </figure>
+                        <article>
+                            <h4>
+                                <a
+                                    href="https://dziaoure.github.io/stable-diffusion/master-the-art-of-prompt-engineering/">
+                                    Master the Art of Prompt Engineering
+                                </a>
+                                <p>
+                                    <time datetime="2025-05-27">May 27, 2025</time>
+                                </p>
+                            </h4>
+                        </article>
+                    </div>
+                </li>
+            </ul>
+
+        </section>
+
+    </main>
+
+    </main>
+</body>
+
+</html>
