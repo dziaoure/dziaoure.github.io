@@ -12,6 +12,16 @@ h6 {
   color: #fff;
 }
 
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #fbb636;
+}
+
+a:hover {
+  border-bottom: 1px solid #fbb636;
+}
+
 .main {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -109,6 +119,11 @@ h6 {
     font-size: 19px;
     line-height: 1.42105;
   }
+}
+
+.section-related-articles {
+  padding-top: 26px;
+  border-top: 1px solid #fff;
 }
 
 .tag-wrapper {
@@ -234,4 +249,37 @@ dl.generated-image dd figure {
   dl.generated-image dt {
     font-size: 18px;
   }
+}
+
+ul.related-articles {
+  margin: 40px 0;
+}
+
+.article-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.article-wrapper figure {
+  width: 152px;
+  margin: 0 20px 0 0;
+}
+
+.article-wrapper figure img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.article-wrapper figure a:hover {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.article-wrapper article a {
+  font-size: 24px;
+}
+
+.article-wrapper article time {
+  color: rgba(255, 255, 255, 0.85);
 }
